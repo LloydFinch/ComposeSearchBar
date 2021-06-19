@@ -85,9 +85,9 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun ContentList(contentData: ContentsListData) {
         val contents by contentData.getDisplayData().observeAsState(listOf())
-        LazyColumn(modifier = Modifier.fillMaxWidth(), verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.Start) {
+        LazyColumn(modifier = Modifier.fillMaxWidth(), horizontalAlignment = Alignment.Start) {
             items(contents) { content ->
-                Text(text = "content is $content", modifier = Modifier.padding(4.dp))
+                Text(text = content, modifier = Modifier.padding(4.dp))
             }
         }
     }
